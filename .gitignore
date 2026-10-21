@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Maven
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Compiled
+*.class
