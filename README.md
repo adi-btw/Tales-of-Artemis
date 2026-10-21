@@ -244,14 +244,3 @@ Parental controls allow restricted access to administrative features such as:
 - If running from an IDE, ensure the working directory is set to the project root
 
 ---
-
-## For TA Marking
-
-- All features described in the Requirements and Design documents are implemented
-- Unit tests are included in `src/test/java` (run with `mvn test`)
-- Javadoc documentation can be generated with `mvn javadoc:javadoc`
-- Example save data is pre-loaded in `data/players.json` and `data/leaderboard.json`
-- Test account with real gameplay stats: username `test7`, password `123!`
-- The application has been tested on Windows 10/11 environments
-
----
