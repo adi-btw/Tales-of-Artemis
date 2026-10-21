@@ -1,246 +1,118 @@
 # Tales of Artemis
 
-## Description
-Tales of Artemis is a typing-based educational game where players defeat enemies by correctly typing displayed words. The game incorporates real-time gameplay mechanics, user account management, performance tracking, and level progression. As players advance, difficulty increases through faster gameplay, longer words, and more complex interactions. The system also supports multiple user accounts, persistent data storage, and parental controls.
+A Java desktop typing adventure game where players defeat enemies by typing words, progress through levels, and earn scores.
 
----
+Built as a team project for **CS2212B: Software Engineering II at Western University**, Tales of Artemis combines interactive gameplay with persistent player accounts, leaderboards, and parental controls.
 
-## Required Libraries and Tools
+## Features
 
-The following tools are required to build and run the software:
+- **Typing-based combat:** Type words to attack enemies and progress through the game.
+- **Level progression:** Advance through levels with time pressure and gameplay challenges.
+- **Power-ups:** Use gameplay effects to support your progress.
+- **Player accounts:** Register, log in, and maintain a player profile.
+- **Persistent progress:** Save player information between sessions.
+- **Leaderboards:** Record scores and view high-score rankings.
+- **Parental controls:** Manage gameplay access through dedicated controls.
+- **Tutorial and player hub:** Learn the mechanics and navigate between game features.
 
-- Java Development Kit (JDK) 23 or newer
-- Apache Maven 3.9.0 or higher
-- Operating System: Windows 10 or Windows 11
+## Technology Stack
 
-Optional (recommended):
-- VS Code with Java Extension Pack
+| Area | Technologies |
+|---|---|
+| Language | Java |
+| Desktop interface | Swing |
+| Build and dependencies | Maven |
+| Data persistence | JSON with Gson |
+| Automated testing | JUnit 5 |
+| Architecture | Model–View–Controller (MVC) |
 
----
+## My Contribution
 
-## Dependencies
+**I was responsible for all backend development.**
 
-The project uses the following third-party libraries:
+My work covered the application logic and supporting systems behind the game's interface, including:
 
-- Gson 2.11.0 (for JSON data storage and parsing)
-- JUnit 5.11.0 (for unit testing)
+- Player registration, login, and account management.
+- Player profiles and persistent progress.
+- Score tracking and leaderboard persistence.
+- Game-session and level-progression logic.
+- Typing mechanics and gameplay-state management.
+- Backend logic supporting parental controls.
+- JSON-based data storage using Gson.
+- Unit testing for typing, account-management, and level logic.
+- Integration and system testing, defect tracking, and technical documentation.
 
----
+I also contributed use cases, activity diagrams, a UML class diagram, and Javadoc documentation to explain the system's behavior and structure.
 
-## Installation of Required Tools
+The project was developed collaboratively. My responsibility was the backend; the complete application also includes interface work and other contributions from my teammates.
 
-### 1. Install Java (JDK 23+)
-1. Download from: https://adoptium.net/
-2. Install using default settings
-3. Verify installation:
+## Architecture
 
-```
-java -version
-```
+Tales of Artemis follows an MVC structure to separate gameplay and application logic from the Swing interface.
 
----
+- **Model:** Represents players, enemies, power-ups, levels, profiles, and scores.
+- **View:** Presents menus, gameplay, tutorials, leaderboards, and account screens.
+- **Control and application logic:** Coordinates typing input, game sessions, account operations, and progression.
 
-### 2. Install Apache Maven (3.9+)
-1. Download from: https://maven.apache.org/download.cgi
-2. Extract to:
+This separation supports testing application behavior independently of the interface.
 
-```
-C:\Program Files\apache-maven-3.9.x
-```
+## Getting Started
 
-3. Add to PATH:
+### Prerequisites
 
-```
-C:\Program Files\apache-maven-3.9.x\bin
-```
+- JDK 23
+- Maven 3.9 or newer
+- A desktop environment capable of running Java Swing applications
 
-4. Verify installation:
+### Clone the Repository
 
-```
-mvn -v
-```
-
----
-
-## Project Structure
-
-```
-src/main/java   → main application source code
-src/test/java   → unit tests
-data/           → JSON data files (players.json, leaderboard.json)
-src/main/resources → game assets (images, audio, word list)
-target/         → compiled files and generated documentation
-```
-
----
-
-## Building the Software (from source)
-
-1. Open Command Prompt or PowerShell
-2. Navigate to the project folder:
-
-```
-cd path\to\group25
+```bash
+git clone https://github.com/adi-btw/Tales-of-Artemis.git
+cd Tales-of-Artemis
 ```
 
-3. Run:
+### Open the Project
 
-```
-mvn clean install
-```
+1. Open the folder containing `pom.xml` in IntelliJ IDEA or another Java IDE.
+2. Import the project as a Maven project.
+3. Configure the project SDK to JDK 23.
+4. Allow Maven to download the dependencies.
+5. Find the application entry point containing `public static void main(String[] args)` and run it.
 
-This will:
-- Compile the project
-- Resolve dependencies
-- Run all unit tests
-- Build the executable JAR files
+### Build and Test
 
----
+Run these commands from the folder containing `pom.xml`:
 
-## Running the Software
-
-**Option 1 — Maven exec (recommended):**
-
-```
-mvn exec:java
-```
-
-**Option 2 — Run the compiled fat JAR (after `mvn package`):**
-
-```
-java -jar target/group25-1.0-SNAPSHOT-runnable.jar
-```
-
-**Option 3 — IDE (VS Code, IntelliJ, etc.):**
-- Open the project
-- Run `Main.java`
-
----
-
-## Running Tests
-
-To execute all unit tests:
-
-```
+```bash
+mvn clean compile
 mvn test
 ```
 
-Test files are located in:
+## Testing
 
-```
-src/test/java
-```
+Testing covered application behavior at several levels:
 
----
+- **Unit testing:** Typing behavior, account management, and level logic.
+- **Integration testing:** Interactions between connected application components.
+- **Validation testing:** Checking behavior against project requirements.
+- **System testing:** Complete user flows through the application.
 
-## Generating API Documentation
+Test scenarios included registration and login, typing feedback, score updates, level progression, pause behavior, game completion, leaderboards, progress persistence, and parental controls.
 
-To generate HTML Javadoc documentation:
+## What I Learned
 
-```
-mvn javadoc:javadoc
-```
+This project strengthened my experience with:
 
-The generated documentation can be found at:
+- Object-oriented design and MVC architecture.
+- Separating backend logic from a desktop interface.
+- Implementing persistent accounts and application data.
+- Developing automated tests for application logic.
+- Investigating defects across connected components.
+- Communicating design decisions through diagrams and documentation.
+- Integrating backend systems into a collaboratively developed application.
 
-```
-target/site/apidocs/index.html
-```
+## Project Background
 
-Open this file in a browser to view the full API documentation.
+Developed by **Group 25** for **CS2212B: Software Engineering II** at Western University.
 
----
-
-## User Guide
-
-### Main Menu
-- Start Game: Begins gameplay (guest mode — no stats saved)
-- Login/Register: Access user accounts
-- High Scores: View leaderboard
-- Tutorial: Learn controls
-- Parental Control: Manage stats and users
-- Exit: Close application
-
----
-
-### Gameplay
-- Words appear on enemies
-- Type the word correctly to defeat the enemy
-- Use arrow keys to move and collect powerups
-- Incorrect typing flashes the screen red
-- Player health decreases if enemies reach the player
-- Score increases with each word typed correctly
-- Press ESC to pause
-
----
-
-### Controls
-- Keyboard: Used for typing words
-- Left/Right Arrow Keys: Move player
-- ESC Key: Pause the game
-- Mouse: Navigation between menus
-
----
-
-### Levels
-- 3 levels with increasing difficulty
-- Easy: short words, slower enemies
-- Medium: medium words, moderate enemy speed
-- Hard: long words, fast enemies
-
----
-
-### Powerups
-- Health Powerup (green egg): Restores player health
-- Slow Time Powerup: Slows all enemies for 5 seconds
-- Powerups spawn randomly on enemy defeat
-
----
-
-### Accounts
-- Users can register and log in
-- Player data is saved locally in `data/players.json`
-- Tracks:
-  - High score
-  - Accuracy
-  - Words per minute (WPM)
-  - Level progression
-  - Total play time
-
----
-
-## Test Accounts
-
-| Username | Password | Notes |
-|----------|----------|-------|
-| test7    | 123!     | Has existing stats and high score |
-| test1    | (see below) | Admin account |
-
-Additional test accounts: test2, test3, test4, test6 (all registered, no stats).
-
-Users may also create their own accounts via the Register screen.
-
----
-
-## Parental Controls
-
-Parental controls allow restricted access to administrative features such as:
-- Viewing player statistics
-- Resetting player data
-- Managing accounts (create/delete)
-- Resetting the leaderboard
-
-### Access Instructions:
-1. Navigate to **Parental Controls** from the main menu
-2. Enter the password: `Parent123!`
-
----
-
-## Additional Notes
-
-- All data is stored locally using JSON files — no internet connection is required
-- The system is designed for desktop use on Windows
-- Ensure Java 23 and Maven are correctly installed before building
-- If running from an IDE, ensure the working directory is set to the project root
-
----
+This repository presents the team's project as part of my software development portfolio. The contribution section describes my individual responsibilities.
