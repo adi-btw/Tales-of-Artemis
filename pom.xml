@@ -62,7 +62,7 @@
                 </configuration>
             </plugin>
 
-<<<<<<< HEAD
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -76,7 +76,7 @@
                 </configuration>
             </plugin>
 
-=======
+
             <!-- exec:java support: mvn exec:java -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -109,7 +109,7 @@
                 </executions>
             </plugin>
 
->>>>>>> 8e586f307578198dc5c3475a2b4cb4f50dcaf5da
+
         </plugins>
     </build>
 </project>
